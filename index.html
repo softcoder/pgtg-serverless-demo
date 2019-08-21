@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/pg-tg-serverless.js"></script>
+    <link href="css/pg-tg-serverless.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>PGTG Serverless Demo</title>
+  </head>
+  <body>
+    <h1>Welcome to the PGTG Serverless Demo</h1>
+    <span>Enter a Property ID (PID) located in 
+     <a target="_blank" href="https://www.arcgis.com/home/webmap/viewer.html?panel=gallery&suggestField=true&url=https%3A%2F%2Fservices2.arcgis.com%2FCnkB6jCzAsyli34z%2Farcgis%2Frest%2Fservices%2FOpenData_Cadastre%2FFeatureServer%2F6">
+     Prince George, BC</a>:</span>
+    <!-- default the address to 6739 Butte Place -->
+    <input id='pid' type='text' size='10' maxlength='10' value='007859040'>
+    <input type='button' onclick='pgGetPropertyBounds()' value='Draw Property Bounds'><br>
+    <span label label-default>Status: </span><span id='status' class="badge">Waiting</span>
+    <div id="map"></div>
+    <!-- https://maps.googleapis.com/maps/api/js?key=MY_API_KEY&callback=initMap -->
+    <script async defer
+            src="https://us-central1-riprunner-svvfd.cloudfunctions.net/google-map-pg">
+    </script>
+  </body>
+</html>
