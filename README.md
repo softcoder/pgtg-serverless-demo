@@ -1,5 +1,6 @@
 # pgtg-serverless-demo
-Prince George Technology Group - Serverless Computing Demo
+Prince George Technology Group - Serverless Computing Demo  
+(original event: https://princegeorge.tech/events/september-18-2019/)  
 
 This project uses the Open Data API from the City of Prince George, BC:  
 https://data-cityofpg.opendata.arcgis.com/
