@@ -94,5 +94,5 @@ def lambda_handler(event, context):
     }
 ```
 
-Notice above that i added a special header to avoid CORS errors since my application is stored on mutliple clouds this would trigger a security error without that header. For more info read the link below:
+Notice above that i added a special header to avoid CORS errors since my application is stored on mutliple clouds this would trigger a security error without that header. For more info read the following link:
 https://forum.serverless.com/t/has-been-blocked-by-cors-policy-no-access-control-allow-origin-header-is-present-on-the-requested-resource/8974
