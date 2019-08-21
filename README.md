@@ -1,24 +1,22 @@
 # pgtg-serverless-demo
 Prince George Technology Group - Serverless Computing Demo
 
-This project uses the Open Data API from the City of Prince George, BC:
+This project uses the Open Data API from the City of Prince George, BC:  
 https://data-cityofpg.opendata.arcgis.com/
 
-The Google Maps API:
+The Google Maps API:  
 https://developers.google.com/maps/documentation/javascript/tutorial
 
 is used to render property boundaries given a property ID (PID) which can 
-be found by right clicking any property from this city map (or found on your property tax form):
+be found by right clicking any property from this city map (or found on your property tax form):  
 https://www.arcgis.com/home/webmap/viewer.html?panel=gallery&suggestField=true&url=https%3A%2F%2Fservices2.arcgis.com%2FCnkB6jCzAsyli34z%2Farcgis%2Frest%2Fservices%2FOpenData_Cadastre%2FFeatureServer%2F6
 
-The presentation slides-show can be viewed here:
+The presentation slides-show can be viewed here:  
 https://docs.google.com/presentation/d/1xvh_fnSFLijko8yCAXSGYVdzRuzNdzKijVSAj1O3rZU/edit?usp=sharing
 
-We use Serverless functions to wrap the calls to Open Data and Google Maps using both Amazon AWS and Google Cloud Functions.
+We use Serverless functions to wrap the calls to Open Data and Google Maps using both Amazon AWS and Google Cloud Functions.  
 
-The Google Cloud function is defined as a node.js 10 function:
-
-
+The Google Cloud function is defined as a node.js 10 function:  
 
 ```
 index.js:
@@ -29,7 +27,7 @@ exports.helloWorld = function helloWorld(req, res) {
 };
 ```
 
-The Google map API is defined as an environment variable in the function details console
+The Google map MAP_API_KEY is defined as an environment variable in the function details console. The dependencies are defined in:  
 
 ```
 package.json:
@@ -42,13 +40,13 @@ package.json:
 }
 ```
 
-The Amazon Lambda function is defined as a Python 3.7 function:
+The Amazon Lambda function is defined as a Python 3.7 function:  
 
-I found it more challenging to deploy a cloud function in AWS due to the need to hook up the API Gateway to the cloud function as a seperate step. Save yourself time and follow along below via Part 1 and 2:
-Part 1:
-https://www.coursera.org/lecture/aws-fundamentals-building-serverless-applications/aws-lambda-demo-part-1-MVw7u
-Part 2:
-https://www.coursera.org/lecture/aws-fundamentals-building-serverless-applications/aws-lambda-demo-part-2-we2Bw
+I found it more challenging to deploy a cloud function in AWS due to the need to hook up the API Gateway to the cloud function as a seperate step. Save yourself time and follow along below via Part 1 and 2:  
+Part 1:  
+https://www.coursera.org/lecture/aws-fundamentals-building-serverless-applications/aws-lambda-demo-part-1-MVw7u  
+Part 2:  
+https://www.coursera.org/lecture/aws-fundamentals-building-serverless-applications/aws-lambda-demo-part-2-we2Bw  
 
 ```
 lambda_function.py:
@@ -94,5 +92,5 @@ def lambda_handler(event, context):
     }
 ```
 
-Notice above that i added a special header to avoid CORS errors since my application is stored on mutliple clouds this would trigger a security error without that header. For more info read the following link:
+Notice above that i added a special header to avoid CORS errors since my application is stored on mutliple clouds this would trigger a security error without that header. For more info read the following link:  
 https://forum.serverless.com/t/has-been-blocked-by-cors-policy-no-access-control-allow-origin-header-is-present-on-the-requested-resource/8974
