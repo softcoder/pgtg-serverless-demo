@@ -10,15 +10,18 @@ We use Serverless functions to wrap the calls to Open Data and Google Maps using
 
 The Google Cloud function is defined as a node.js 10 function:
 
+```
 index.js:
 exports.helloWorld = function helloWorld(req, res) {
   	const request = require('request');
   	const mapAPIKey = process.env.MAP_API_KEY
     request(`https://maps.googleapis.com/maps/api/js?key=${mapAPIKey}&callback=initMap`).pipe(res)
 };
+```
 
 The Google map API is defined as an environment variable in the function details console
 
+```
 package.json:
 {
   "name": "proxy-google-map-http",
@@ -27,9 +30,11 @@ package.json:
     "request": "^2.81.0"
   }
 }
+```
 
 The Amazon Lambda function is defined as a Python 3.7 function:
 
+```
 lambda_function.py:
 import json
 from botocore.vendored import requests
@@ -72,3 +77,4 @@ def lambda_handler(event, context):
         'headers':{'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': True},
         'body':  json.dumps(triangleCoords)
     }
+```
