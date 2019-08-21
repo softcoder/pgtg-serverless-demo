@@ -62,12 +62,11 @@ def lambda_handler(event, context):
     if len(rings) == 0:
         raise ValueError("Invalid response #5 for PID!")
     rings = rings[0];
-    # status.innerHTML = 'Looking up property information for PID:'+pid.value + ' server found point count: ' + rings.length;
     
-    triangleCoords = []
+    propertyCoords = []
     for ring in rings:
       # console.log('lat: ' + ring[0] + ', long: ' + ring[1]);
-      triangleCoords.append({
+      propertyCoords.append({
         'lat': ring[1],
         'lng': ring[0]
       })
@@ -75,6 +74,6 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
         'headers':{'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': True},
-        'body':  json.dumps(triangleCoords)
+        'body':  json.dumps(propertyCoords)
     }
 ```
