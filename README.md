@@ -8,7 +8,7 @@ The Google Maps API:
 https://developers.google.com/maps/documentation/javascript/tutorial
 
 is used to render property boundaries given a property ID (PID) which can 
-be found by right clicking any property from this map city (or found on your property tax form):
+be found by right clicking any property from this city map (or found on your property tax form):
 https://www.arcgis.com/home/webmap/viewer.html?panel=gallery&suggestField=true&url=https%3A%2F%2Fservices2.arcgis.com%2FCnkB6jCzAsyli34z%2Farcgis%2Frest%2Fservices%2FOpenData_Cadastre%2FFeatureServer%2F6
 
 The presentation slides-show can be viewed here:
